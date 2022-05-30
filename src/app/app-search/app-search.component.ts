@@ -12,16 +12,17 @@ export class AppSearchComponent implements OnInit {
   users!: any[];
 
   // extra
-  public count: number = 1;
+  public count: number = 0;
   public storeTime: number = 0;
   private storeDate: any;
+  public msg: string = "";
 
   constructor(private githubService: GithubService) { }
   ngOnInit(): void {
   }
 
   public getUsers() {
-    this.githubService.getData(this.searchString).subscribe((data) => {
+    this.githubService.getUsersByInName(this.searchString).subscribe((data) => {
       this.users = data.items;
       console.log(this.users)
     })
@@ -39,9 +40,11 @@ export class AppSearchComponent implements OnInit {
       if(this.storeTime!=0 && this.storeTime+60>now) {
         const timeDiff = this.storeTime+60-now;
         console.log("wait for "+timeDiff+" seconds as 8 request/minute allowed only");
+        this.msg = "please wait for "+timeDiff+" seconds as 9 request/minute allowed only";
       }
       else {
-        this.count=1;
+        this.count=0;
+        this.msg="";
         this.getUsers()
       }
     }
@@ -49,7 +52,8 @@ export class AppSearchComponent implements OnInit {
       this.getUsers()
     }
     console.log(this.count)
-    this.count++;
+    if(this.count<=8)
+      this.count++;
   }
 
   // extra

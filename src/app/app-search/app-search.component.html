@@ -2,7 +2,7 @@
   <!-- For demo purpose -->
   <div class="row py-5">
     <div class="col-lg-9 mx-auto text-white text-center">
-      <h1 class="display-4 text-danger">Github profile search bar</h1>
+      <h1 class="display-4 text-danger">Github profile search <span><button class="rounded-circle btn btn-danger">{{count}}</button></span></h1>
       <p class="lead mb-0 text-primary">built with github api and angular</p>
       <p class="lead text-dark">Developed by <a target="_blank" href="https://www.linkedin.com/in/subratahalder97/" class="text-info">
         <u>Subrata Halder</u></a>
@@ -28,8 +28,13 @@
   </div>
 
   <div class="row mb-5">
-    <div class="col-lg-8 mx-auto">
-      <p>{{searchString}}</p>
+    <div class="col">
+      <p class="text-center">{{searchString}}</p>
+    </div>
+  </div>
+  <div class="row mb-5 d-flex">
+    <div class="col mx-auto">
+      <p class="text-center text-danger">{{msg}}</p>
     </div>
   </div>
 

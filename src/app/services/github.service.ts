@@ -9,7 +9,7 @@ export class GithubService {
 
   constructor(private http: HttpClient) { }
 
-  getData(searchString:string): Observable<any> {
+  getUsersByInName(searchString:string): Observable<any> {
     const url = "https://api.github.com/search/users?q="+searchString+"%20in:name";
     return this.http.get(url);
   }
