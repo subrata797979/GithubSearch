@@ -40,7 +40,7 @@ export class AppSearchComponent implements OnInit {
       if(this.storeTime!=0 && this.storeTime+60>now) {
         const timeDiff = this.storeTime+60-now;
         console.log("wait for "+timeDiff+" seconds as 8 request/minute allowed only");
-        this.msg = "please wait for "+timeDiff+" seconds as 9 request/minute allowed only";
+        this.msg = "please wait for "+timeDiff+" seconds as 9 request/minute allowed only in github api";
       }
       else {
         this.count=0;
