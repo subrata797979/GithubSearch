@@ -8,20 +8,28 @@ import { AppSearchComponent } from './app-search/app-search.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { AppUsersComponent } from './app-users/app-users.component';
+import { AppFooterComponent } from './app-footer/app-footer.component';
+import { AppAboutComponent } from './app-about/app-about.component';
+import { AppContactComponent } from './app-contact/app-contact.component';
+import { AppRoutingModule } from "./app-routing.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     AppMainComponent,
     AppSearchComponent,
-    AppUsersComponent
+    AppUsersComponent,
+    AppFooterComponent,
+    AppAboutComponent,
+    AppContactComponent
   ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         FormsModule,
         HttpClientModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AppRoutingModule
     ],
   providers: [],
   bootstrap: [AppComponent]
